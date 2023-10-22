@@ -1,0 +1,15 @@
+# AUTHOR: dongsq
+# REPO: https://www.icloud.com.cn/iclouddrive/05aeDHE4odUHXHhsQneHWcTow#stash_rules
+# UPDATED: 2023-10-22 18:15:55
+name: stashAd
+desc: 去开屏广告
+ 
+http:
+  mitm:
+    - pic4.zhimg.com
+  # HTTP(S) 重写，支持 header、302、307、reject 多种策略
+  rewrite:
+    - ^https?://ad\.example - reject # 拒绝请求
+    - ^https:\/\/pic4\.zhimg\.com - reject-200
+rules:
+  - REJECT
